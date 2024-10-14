@@ -8,21 +8,55 @@ using System.Numerics;
 
 namespace MathLibrary
 {
-    public class Vector2
+    public struct Vector2
     {
-        float x, y;
+        public float x, y;
 
-        public Vector2()
+        public float Magnitude
         {
-            x = 0;
-            y = 0;
+            get
+            {
+                // c = sqrt(x^2 + y^2)
+                return (float)Math.Abs(Math.Sqrt(Math.Pow(x, 2) + Math.Pow(y, 2)));
+            }
         }
 
-        public Vector2(float x, float y)
+        public Vector2 Normalized
+        {
+            get
+            {
+                return this / Magnitude;
+            }
+        }
+        public Vector2(float x = 0, float y = 0)
         {
             this.x = x;
             this.y = y;
         }
+
+        public Vector2 Normalize()
+        {
+            this = Normalized;
+            return this;
+        }
+
+        public override string ToString()
+        {
+            // (x,y)
+            return "(" + x + ", " + y + ")";
+        }
+
+        public static bool operator ==(Vector2 left, Vector2 right)
+        {
+            return (left.x == right.x) && (left.y == right.y);
+
+        }
+
+        public static bool operator !=(Vector2 left, Vector2 right)
+        {
+            return !(left == right);
+        }
+
 
         // Operator overload for addition
         public static Vector2 operator +(Vector2 left, Vector2 right)
@@ -36,23 +70,20 @@ namespace MathLibrary
             return new Vector2(left.x - right.x, left.y - right.y);
         }
 
-        // Operator overload for multiplication by a vector
-        public static Vector2 operator *(Vector2 left, Vector2 right)
-        {
-            return new Vector2(left.x * right.x, left.y * right.y);
-        }
 
         // Operator overload for multiplication by a scalar
-        public static Vector2 operator *(Vector2 left, float right)
+        public static Vector2 operator *(Vector2 left, float scalar)
         {
-            return new Vector2(left.x * right, left.y * right);
+            return new Vector2(left.x * scalar, left.y * scalar);
         }
 
         // Operator overload for divison
-        public static Vector2 operator /(Vector2 left, Vector2 right)
+        public static Vector2 operator /(Vector2 left, float scalar)
         {
-            return new Vector2(left.x / right.x, left.y / right.y);
+            return new Vector2(left.x / scalar, left.y / scalar);
         }
+
+        
 
         // implicit conversation from System.Numerics.Vector2 to Vector 2
         public static implicit operator Vector2(System.Numerics.Vector2 vector)

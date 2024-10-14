@@ -1,6 +1,5 @@
 ﻿using MathLibrary;
 using Raylib_cs;
-using System.Numerics;
 
 
 namespace Sandbox
@@ -11,35 +10,40 @@ namespace Sandbox
         {
             Raylib.InitWindow(800, 480, "Hello World");
 
-            Vector2 deltaPosition = new Vector2(0, 0);
-            Vector2 position = new Vector2();
+            //MathLibrary.Vector2 a = new MathLibrary.Vector2(1, 2);
+            //Console.WriteLine(a.ToString());
+            //Console.WriteLine(a.Normalized.Magnitude);
+            //Console.WriteLine((a.Normalized *5).Magnitude);
+            //MathLibrary.Vector2 b = new MathLibrary.Vector2();
+            //Console.WriteLine(a == b);
+            //Console.WriteLine(a != b);
 
             while (!Raylib.WindowShouldClose())
             {
                 Raylib.BeginDrawing();
                 Raylib.ClearBackground(Color.Gray);
                 Raylib.SetTargetFPS(60);
-                Raylib.DrawRectangle((int)position.X, (int)position.Y, 50, 50, Color.Red);
+                //Raylib.DrawRectangle((int)position.X, (int)position.Y, 50, 50, Color.Red);
 
 
-                float speed = 100.0f;
+                //float speed = 100.0f;
 
-                int forward = Raylib.IsKeyDown(KeyboardKey.W);
-                int back = Raylib.IsKeyDown(KeyboardKey.S);
-                int left = Raylib.IsKeyDown(KeyboardKey.A);
-                int right = Raylib.IsKeyDown(KeyboardKey.D);
+                //int forward = Raylib.IsKeyDown(KeyboardKey.W);
+                //int back = Raylib.IsKeyDown(KeyboardKey.S);
+                //int left = Raylib.IsKeyDown(KeyboardKey.A);
+                //int right = Raylib.IsKeyDown(KeyboardKey.D);
 
-                deltaPosition.Y -= forward;
-                deltaPosition.Y += back;
-                deltaPosition.X -= left;
-                deltaPosition.X += right;
+                //deltaPosition.Y -= forward;
+                //deltaPosition.Y += back;
+                //deltaPosition.X -= left;
+                //deltaPosition.X += right;
 
-                position.X = deltaPosition.X;
-                position.Y = deltaPosition.Y;
+                //position.X = deltaPosition.X;
+                //position.Y = deltaPosition.Y;
 
-                
 
-                //Raylib.DrawText("Vector!! That's me. 'Cause I'm committing crimes with both direction and magnitude. OH YEAH!!!!!!!!!!!!", 12, 12, 16, Color.Black);
+
+                //Raylib.DrawText("Vector!! That's me. 'Cause I'm committing crimes with both direction and magnitude. OH YEAH!!!!!!!!!!!!", 12, 12, 16, Color.Orange);
                 //// Head
                 //Raylib.DrawCircle(375, 150, 55, Color.Beige);
                 //// Glasses
@@ -72,7 +76,7 @@ namespace Sandbox
                 //Raylib.DrawRectangle(325, 470, 10, 10, Color.White);
                 //Raylib.DrawRectangle(415, 470, 10, 10, Color.White);
 
-                Raylib.EndDrawing();
+                //Raylib.EndDrawing();
 
 
             }
