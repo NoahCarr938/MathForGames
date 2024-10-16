@@ -45,6 +45,16 @@ namespace MathLibrary
             return "(" + x + ", " + y + ")";
         }
 
+        public float DotProduct(Vector3 other)
+        {
+            return (x * other.x) + (y * other.y) + (z * other.z);
+        }
+
+        public Vector3 CrossProduct(Vector3 other)
+        {
+            return new Vector3((y * other.z - z * other.y), (z * other.x - x * other.z), (x * other.y - y * other.x)); 
+        }
+
         public static bool operator ==(Vector3 left, Vector3 right)
         {
             return (left.x == right.x) && (left.y == right.y) && (left.z == right.z);
@@ -60,7 +70,7 @@ namespace MathLibrary
         // Operator overload for addition
         public static Vector3 operator +(Vector3 left, Vector3 right)
         {
-            return new Vector3(left.x - right.x, left.y - right.y, left.z - right.z);
+            return new Vector3(left.x + right.x, left.y + right.y, left.z + right.z);
         }
 
         //Operator overload for subtraction

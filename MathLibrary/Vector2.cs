@@ -46,6 +46,21 @@ namespace MathLibrary
             return "(" + x + ", " + y + ")";
         }
 
+        public float DotProduct(Vector2 other)
+        {
+            return (x * other.x) + (y * other.y);
+        }
+
+        public float Distance(Vector2 other)
+        {
+            return (other - this).Magnitude;
+        }
+
+        public float Angle(Vector2 other)
+        {
+            return (float)Math.Acos(other.DotProduct(this));
+        }
+
         public static bool operator ==(Vector2 left, Vector2 right)
         {
             return (left.x == right.x) && (left.y == right.y);
@@ -61,7 +76,7 @@ namespace MathLibrary
         // Operator overload for addition
         public static Vector2 operator +(Vector2 left, Vector2 right)
         {
-            return new Vector2(left.x - right.x, left.y - right.y);
+            return new Vector2(left.x + right.x, left.y + right.y);
         }
 
         //Operator overload for subtraction
