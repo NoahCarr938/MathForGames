@@ -41,8 +41,8 @@ namespace MathLibrary
 
         public override string ToString()
         {
-            // (x,y)
-            return "(" + x + ", " + y + ")";
+            // (x,y,z)
+            return "(" + x + ", " + y + ", " + z + ")";
         }
 
         public float DotProduct(Vector3 other)

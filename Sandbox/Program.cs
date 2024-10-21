@@ -8,6 +8,69 @@ namespace Sandbox
     {
         static void Main(string[] args)
         {
+            // Test to see if vector2 DotProduct works. (It does)
+            Vector2 vector2test1 = new Vector2(2, 2);
+            Vector2 vector2test2 = new Vector2(4, 4);
+            float vector2sum;
+            vector2sum = vector2test1.DotProduct(vector2test2);
+
+            Console.WriteLine(vector2test1.x + " " + vector2test1.y);
+            Console.WriteLine(vector2test2.x + " " + vector2test2.y);
+            Console.WriteLine(vector2sum);
+
+            // Test to see if vector3 DotProduct works. (It does)
+            Vector3 vector3test1 = new Vector3(2, 2, 2);
+            Vector3 vector3test2 = new Vector3(4, 4, 4);
+            float vector3sum;
+            vector3sum = vector3test1.DotProduct(vector3test2);
+            Console.WriteLine(vector3test1.x + " " + vector3test1.y + " " + vector3test1.z);
+            Console.WriteLine(vector3test2.x + " " + vector3test2.y + " " + vector3test2.z);
+            Console.WriteLine(vector3sum);
+
+            // Test to see if vector3 CrossProduct works. (It does)
+            Vector3 vector3test3 = new Vector3(2, 3, 2);
+            Vector3 vector3test4 = new Vector3(5, 2, 2);
+            Vector3 vector3crossproduct;
+            vector3crossproduct = vector3test3.CrossProduct(vector3test4);
+            Console.WriteLine(vector3test3.x + " " + vector3test3.y + " " + vector3test3.z);
+            Console.WriteLine(vector3test4.x + " " + vector3test4.y + " " + vector3test4.z);
+            Console.WriteLine(vector3crossproduct);
+
+            // Matrix 3 Tests
+
+            // Addition
+            Matrix3 matrixtest1 = new Matrix3(3, 12, 1, 2, 3, 2, 1, 2, 3);
+            Matrix3 matrixtest2 = new Matrix3(2, 2, 7, 2, 8, 1, 4, 5, 7);
+            // Making a variable that stores the sum
+            Matrix3 matrix3sum;
+            matrix3sum = matrixtest1 + (matrixtest2);
+            Console.WriteLine(matrix3sum);
+
+            // Subtraction
+            Matrix3 matrixtest3 = new Matrix3(3, 12, 1, 2, 3, 2, 1, 2, 3);
+            Matrix3 matrixtest4 = new Matrix3(2, 2, 7, 2, 8, 1, 4, 5, 7);
+            Matrix3 matrix3sub;
+            matrix3sub = matrixtest3 - (matrixtest4);
+            Console.WriteLine(matrix3sub);
+
+            // Multiplictaion
+            Matrix3 matrixtest5 = new Matrix3(3, 12, 1, 2, 3, 2, 1, 2, 3);
+            Matrix3 matrixtest6 = new Matrix3(2, 2, 7, 2, 8, 1, 4, 5, 7);
+            Matrix3 matrix3multiply;
+            matrix3multiply = matrixtest5 * (matrixtest6);
+            Console.WriteLine(matrix3multiply);
+
+            // Division
+            Matrix3 matrixtest7 = new Matrix3(3, 12, 1, 2, 3, 2, 1, 2, 3);
+            Matrix3 matrixtest8 = new Matrix3(2, 2, 7, 2, 8, 1, 4, 5, 7);
+            Matrix3 matrix3divide;
+            matrix3divide = matrixtest7 / (matrixtest8);
+            Console.WriteLine(matrix3divide);
+
+
+
+
+
             Raylib.InitWindow(800, 480, "Hello World");
 
             Vector2 screenDimensions = 
@@ -38,6 +101,8 @@ namespace Sandbox
 
             while (!Raylib.WindowShouldClose())
             {
+                //Vector3 vectorA = new Vector3(10, 10, 10);
+                //vectorA.DotProduct(vectorA);
                 // Update
                 // Movement
 
