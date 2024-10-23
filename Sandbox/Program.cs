@@ -67,6 +67,10 @@ namespace Sandbox
             matrix3divide = matrixtest7 / (matrixtest8);
             Console.WriteLine(matrix3divide);
 
+            // Translation of a Matrix3
+            // Rotation of a Matrix3
+            // Scale of a Matrix3
+
 
 
 

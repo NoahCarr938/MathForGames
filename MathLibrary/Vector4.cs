@@ -87,6 +87,12 @@ namespace MathLibrary
             return new Vector4(left.x * scalar, left.y * scalar, left.z * scalar, left.w * scalar);
         }
 
+        // Operator overload for multiplication by a vector
+        public static Vector4 operator *(float scalar, Vector4 left)
+        {
+            return new Vector4(scalar * left.x, scalar * left.y, scalar * left.z, scalar * left.w);
+        }
+
         // Operator overload for divison
         public static Vector4 operator /(Vector4 left, float scalar)
         {

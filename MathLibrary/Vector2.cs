@@ -5,6 +5,7 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Numerics;
+using System.Net.Http.Headers;
 
 namespace MathLibrary
 {
@@ -90,6 +91,12 @@ namespace MathLibrary
         public static Vector2 operator *(Vector2 left, float scalar)
         {
             return new Vector2(left.x * scalar, left.y * scalar);
+        }
+
+        // Operator overload for multiplication by a vector
+        public static Vector2 operator *(float scalar, Vector2 left)
+        {
+            return new Vector2(scalar * left.x, scalar * left.y);
         }
 
         // Operator overload for divison
