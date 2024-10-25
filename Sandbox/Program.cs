@@ -60,12 +60,6 @@ namespace Sandbox
             matrix3multiply = matrixtest5 * (matrixtest6);
             Console.WriteLine(matrix3multiply);
 
-            // Division
-            Matrix3 matrixtest7 = new Matrix3(3, 12, 1, 2, 3, 2, 1, 2, 3);
-            Matrix3 matrixtest8 = new Matrix3(2, 2, 7, 2, 8, 1, 4, 5, 7);
-            Matrix3 matrix3divide;
-            matrix3divide = matrixtest7 / (matrixtest8);
-            Console.WriteLine(matrix3divide);
 
             // Translation of a Matrix3
             // Rotation of a Matrix3

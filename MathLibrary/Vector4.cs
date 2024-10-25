@@ -42,7 +42,7 @@ namespace MathLibrary
 
         public override string ToString()
         {
-            // (x,y,z)
+            // (x,y,z,w)
             return "(" + x + ", " + y + ", " + z + ", " + w + ")";
         }
 

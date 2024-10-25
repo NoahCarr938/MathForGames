@@ -14,7 +14,7 @@ namespace MathLibrary
         {
             get
             {
-                // c = sqrt(x^2 + y^2 + z^2)
+                // c = sqrt(x^2 + y^2 + z^2 + w^2)
                 return (float)Math.Abs(Math.Sqrt(Math.Pow(x, 2) + Math.Pow(y, 2) + Math.Pow(z, 2)));
             }
         }
@@ -42,7 +42,7 @@ namespace MathLibrary
         public override string ToString()
         {
             // (x,y,z)
-            return "(" + x + ", " + y + ", " + z + ")";
+            return "(" + x + ", " + y + ", " + z + ", " + ")";
         }
 
         public float DotProduct(Vector3 other)
@@ -52,7 +52,7 @@ namespace MathLibrary
 
         public Vector3 CrossProduct(Vector3 other)
         {
-            return new Vector3((y * other.z - z * other.y), (z * other.x - x * other.z), (x * other.y - y * other.x)); 
+            return new Vector3((y * other.z - z * other.y), (z * other.x - x * other.z), (x * other.y - y * other.x));
         }
 
         public static bool operator ==(Vector3 left, Vector3 right)
@@ -95,18 +95,18 @@ namespace MathLibrary
         // Operator overload for divison
         public static Vector3 operator /(Vector3 left, float scalar)
         {
-            return new Vector3(left.x / scalar, left.y / scalar, left.y / scalar);
+            return new Vector3(left.x / scalar, left.y / scalar, left.z / scalar);
         }
 
 
 
-        // implicit conversation from System.Numerics.Vector3 to Vector 3
+        // implicit conversation from System.Numerics.Vector4 to Vector 4
         public static implicit operator Vector3(System.Numerics.Vector3 vector)
         {
             return new Vector3(vector.X, vector.Y, vector.Z);
         }
 
-        // implicit conversion from Vector3 to System.Numerics.Vector3
+        // implicit conversion from Vector4 to System.Numerics.Vector4
         public static implicit operator System.Numerics.Vector3(Vector3 vector)
         {
             return new System.Numerics.Vector3(vector.x, vector.y, vector.z);
