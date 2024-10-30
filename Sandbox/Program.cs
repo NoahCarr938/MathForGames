@@ -16,7 +16,8 @@ namespace Sandbox
             Actor a = new Actor();
 
             Transform2D t1 = new Transform2D(a);
-            Vector2 offset = new Vector2(t1.LocalScale.x * SCALE_MULTIPLIER / 2, t1.LocalScale.y * SCALE_MULTIPLIER / 2);
+            t1.LocalScale = new Vector2(100, 100);
+            Vector2 offset = new Vector2(t1.LocalScale.x / 2, t1.LocalScale.y / 2);
             t1.LocalPosition = new Vector2(
                 (Raylib.GetScreenWidth() * 0.33f) - offset.x,
                 (Raylib.GetScreenHeight() * 0.33f) - offset.y);
